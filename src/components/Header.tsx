@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger 
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Bell, Search, Heart, Hospital, Calendar, Book, Profile } from 'lucide-react';
+import { Menu, Bell, Search, Heart, Hospital, Calendar, Book, User } from 'lucide-react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,7 +66,7 @@ const Header = () => {
                   <Avatar className="h-10 w-10">
                     <AvatarImage src="/placeholder.svg" alt="Profile" />
                     <AvatarFallback className="bg-medical-blue text-white">
-                      <Profile className="w-5 h-5" />
+                      <User className="w-5 h-5" />
                     </AvatarFallback>
                   </Avatar>
                 </Button>
