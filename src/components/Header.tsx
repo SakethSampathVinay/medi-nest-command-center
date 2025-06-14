@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { 
@@ -28,26 +29,26 @@ const Header = () => {
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-to-br from-medical-blue to-medical-green rounded-xl flex items-center justify-center">
               <Heart className="w-6 h-6 text-white" />
             </div>
             <span className="text-2xl font-bold font-poppins text-medical-text">
               Medi<span className="text-medical-blue">Nest</span>
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.path}
+                to={item.path}
                 className="flex items-center space-x-2 text-medical-text-secondary hover:text-medical-blue transition-colors duration-200 font-medium"
               >
                 <item.icon className="w-4 h-4" />
                 <span>{item.name}</span>
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -90,15 +91,15 @@ const Header = () => {
               <SheetContent className="w-[300px] bg-white/95 backdrop-blur-md">
                 <div className="mt-6 space-y-4">
                   {navItems.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
-                      href={item.path}
+                      to={item.path}
                       className="flex items-center space-x-3 p-3 rounded-lg hover:bg-medical-blue/10 transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
                       <item.icon className="w-5 h-5 text-medical-blue" />
                       <span className="font-medium">{item.name}</span>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </SheetContent>
